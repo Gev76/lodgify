@@ -29,12 +29,6 @@ class DashboardPage {
         cy.get(this.projectHeader).should('contain', name);
     }
 
-    createNewTask = (taskName, taskDescription) => {
-        cy.get(this.addTask).click();
-        cy.get(this.taskForm).should('be.visible');
-        cy.get(this.taskNameInput).type(taskName);
-        cy.get(this.taskDescriptionInput).type(taskDescription)
-    }
   }
   
   export default DashboardPage;

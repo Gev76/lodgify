@@ -3,9 +3,6 @@ import ProjectAPI from "../api/projectAPI";
 const projectAPI = new ProjectAPI();
 
 class ProjectActions {
-    constructor() {
-        this.loginTitle = 'h1';
-    }
 
     createNewProjectViaAPI = (name) => {
         projectAPI.getAllProjects()
