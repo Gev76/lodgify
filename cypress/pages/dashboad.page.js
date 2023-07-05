@@ -8,6 +8,10 @@ class DashboardPage {
         this.projectsList = '[id="left-menu-projects-panel"]';
         this.createdProject = '[data-type="project_list_item"]';
         this.projectHeader = '[data-testid="view_header__h1"]';
+        this.addTask = '[data-add-task-navigation-element="true"]';
+        this.taskForm = '[data-testid="task_list_editor_wrapper"]';
+        this.taskNameInput = '[data-placeholder="Task name"]';
+        this.taskDescriptionInput = '[data-placeholder="Description"]';
     }
 
     verifyUserIsLoggedIn = () => {
@@ -23,6 +27,13 @@ class DashboardPage {
         cy.get(this.createdProject).click();
         cy.get(this.projectHeader).should('be.visible');
         cy.get(this.projectHeader).should('contain', name);
+    }
+
+    createNewTask = (taskName, taskDescription) => {
+        cy.get(this.addTask).click();
+        cy.get(this.taskForm).should('be.visible');
+        cy.get(this.taskNameInput).type(taskName);
+        cy.get(this.taskDescriptionInput).type(taskDescription)
     }
   }
   
