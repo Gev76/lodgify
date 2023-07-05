@@ -18,13 +18,13 @@ describe('Should be able to create new project and task', () => {
         projectAPI.deleteAllProjects();
     });
 
-    it ('should be able to create a new project', () => {
-        projectActions.createNewProjectViaAPI(assertions.projectName);
+    it('should be able to create a new project', () => {
+        projectActions.createNewProjectViaAPI(assertions.projectNameForUITest);
         cy.navigateToLoginPage();
         loginPage.verifyPageIsLoaded();
         cy.login();
         dashboadPage.verifyUserIsLoggedIn();
-        dashboadPage.verifyCreatedProjectIsInList(assertions.projectName);
+        dashboadPage.verifyCreatedProjectIsInList(assertions.projectNameForUITest);
     })
 
 

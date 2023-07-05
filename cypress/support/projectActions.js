@@ -21,12 +21,11 @@ class ProjectActions {
         });
     }
 
-    verifyTaskIsCreatedViaAPI = (taskName, taskDescription) => {
+    verifyTaskIsSavedViaAPI = (taskName, taskDescription) => {
         projectAPI.getAllProjects()
             .then(allProjects => {
                 expect(allProjects.status).to.equal(200);
                 const createdProjectId = allProjects.body[allProjects.body.length - 1].id;
-                cy.log('done')
                 projectAPI.getAllTasks()
                     .then(allTasks => {
                         expect(allTasks.status).to.equal(200);
@@ -36,6 +35,16 @@ class ProjectActions {
                         expect(createdTask.due.date).to.equal(todayDate());
                     })
             });
+    }
+
+    createNewProjectAndTask = (projectName, taskName, taskDescription, dueTime) => {
+        this.createNewProjectViaAPI(projectName);
+        projectAPI.getAllProjects()
+        .then(allProjects => {
+            expect(allProjects.status).to.equal(200);
+            const createdProjectId = allProjects.body[allProjects.body.length - 1].id;
+            projectAPI.createTask(createdProjectId, taskName, taskDescription, dueTime)
+        });
     }
   }
   

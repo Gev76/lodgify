@@ -1,7 +1,12 @@
 {
-  "projectName": "New testing project 888",
+  "projectNameForUITest": "New testing project for UI",
   "loginTitleText": "Log in",
   "today": "Today",
   "taskName": "Testing task name",
-  "taskDescription": "Testing task description"
+  "taskDescription": "Testing task description",
+  "dueTime": "tomorrow at 12:00",
+  "projectNameForAPITest": "New testing project for API",
+  "taskNameAPI": "Testing task name for API",
+  "taskDescriptionAPI": "Testing task description for API",
+  "time": "Tomorrow 12:00"
 }
