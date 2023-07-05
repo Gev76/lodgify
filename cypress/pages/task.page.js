@@ -35,6 +35,12 @@ class TaskPage {
         cy.get(this.createdTask).should('contain', assertions.taskDescription);
         cy.get(this.createdTask).should('contain', assertions.today);
     }
+
+    verifyCreatedTaskIsThere = (name, description, time) => {
+        cy.get(this.createdTask).should('contain', name);
+        cy.get(this.createdTask).should('contain', description);
+        cy.get(this.createdTask).should('contain', time);
+    }
   }
   
   export default TaskPage;

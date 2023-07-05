@@ -20,15 +20,25 @@ describe('Should be able to create new task', () => {
         projectAPI.deleteAllProjects();
     });
 
-    it ('should be able to create a new task', () => {
-        projectActions.createNewProjectViaAPI(assertions.projectName);
+    it('should be able to create a new task in UI', () => {
+        projectActions.createNewProjectViaAPI(assertions.projectNameForUITest);
         cy.navigateToLoginPage();
         loginPage.verifyPageIsLoaded();
         cy.login();
         dashboadPage.verifyUserIsLoggedIn();
-        dashboadPage.verifyCreatedProjectIsInList(assertions.projectName);
+        dashboadPage.verifyCreatedProjectIsInList(assertions.projectNameForUITest);
         taskPage.createNewTask(assertions.taskName, assertions.taskDescription);
         taskPage.verifyTaskIsSavedInUI();
-        projectActions.verifyTaskIsCreatedViaAPI(assertions.taskName, assertions.taskDescription);
+        projectActions.verifyTaskIsSavedViaAPI(assertions.taskName, assertions.taskDescription);
+    })
+
+    it('should be able to create new task by API', () => {
+        projectActions.createNewProjectAndTask(assertions.projectNameForAPITest, assertions.taskNameAPI, assertions.taskDescriptionAPI, assertions.dueTime);
+        cy.navigateToLoginPage();
+        loginPage.verifyPageIsLoaded();
+        cy.login();
+        dashboadPage.verifyUserIsLoggedIn();
+        dashboadPage.verifyCreatedProjectIsInList(assertions.projectNameForAPITest);
+        taskPage.verifyCreatedTaskIsThere(assertions.taskNameAPI, assertions.taskDescriptionAPI, assertions.time);
     })
 })

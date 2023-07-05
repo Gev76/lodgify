@@ -58,6 +58,26 @@ class ProjectAPI {
       }
     })
   }
+
+  createTask = (projectId, taskName, taskDescription, dueTime) => {
+    const requestPayload = {
+      project_id: projectId,
+      content: taskName,
+      description: taskDescription,
+      due_string: dueTime,
+      due_lang: 'en',
+    };
+
+    cy.request({
+      method: 'POST',
+      url: 'https://api.todoist.com/rest/v2/tasks',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '+ apiToken
+      },
+      body: requestPayload
+    })
+  }
 }
 
 export default ProjectAPI;
