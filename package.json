@@ -1,0 +1,23 @@
+{
+  "name": "lodgify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gev76/lodgify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gev76/lodgify/issues"
+  },
+  "homepage": "https://github.com/Gev76/lodgify#readme",
+  "devDependencies": {
+    "cypress": "^12.16.0"
+  }
+}
