@@ -24,6 +24,7 @@ class DashboardPage {
         cy.get(this.projectHeader).should('be.visible');
         cy.get(this.projectHeader).should('contain', name);
     }
+
   }
   
   export default DashboardPage;

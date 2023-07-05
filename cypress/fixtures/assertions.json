@@ -1,5 +1,7 @@
 {
   "projectName": "New testing project 888",
   "loginTitleText": "Log in",
-  "today": "Today"
+  "today": "Today",
+  "taskName": "Testing task name",
+  "taskDescription": "Testing task description"
 }

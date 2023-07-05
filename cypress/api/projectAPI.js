@@ -8,7 +8,6 @@ class ProjectAPI {
       url: 'https://api.todoist.com/rest/v2/projects',
       headers: {
         'Content-Type': 'application/json',
-        'X-Request-Id': Cypress._.random(100000000, 999999999),
         'Authorization': 'Bearer '+ apiToken
       },
       body: {
@@ -47,6 +46,17 @@ class ProjectAPI {
     }).then((response) => {
       expect(response.status).to.equal(204);
     });
+  }
+
+  getAllTasks = () => {
+    return cy.request({
+      method: 'GET',
+      url: 'https://api.todoist.com/rest/v2/tasks',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '+ apiToken
+      }
+    })
   }
 }
 
