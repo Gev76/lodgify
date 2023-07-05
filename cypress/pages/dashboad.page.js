@@ -8,10 +8,6 @@ class DashboardPage {
         this.projectsList = '[id="left-menu-projects-panel"]';
         this.createdProject = '[data-type="project_list_item"]';
         this.projectHeader = '[data-testid="view_header__h1"]';
-        this.addTask = '[data-add-task-navigation-element="true"]';
-        this.taskForm = '[data-testid="task_list_editor_wrapper"]';
-        this.taskNameInput = '[data-placeholder="Task name"]';
-        this.taskDescriptionInput = '[data-placeholder="Description"]';
     }
 
     verifyUserIsLoggedIn = () => {
