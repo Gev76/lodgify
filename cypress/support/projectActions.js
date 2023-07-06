@@ -30,7 +30,6 @@ class ProjectActions {
     verifyUserCannotCreateMoreProjects = () => {
         projectAPI.createProject('boundary project').then((response) => {
             expect(response.status).to.equal(403);
-            // Add additional assertions or logic based on the expected 403 response
           });
     }
 
