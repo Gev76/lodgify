@@ -8,5 +8,9 @@
   "projectNameForAPITest": "New testing project for API",
   "taskNameAPI": "Testing task name for API",
   "taskDescriptionAPI": "Testing task description for API",
-  "time": "Tomorrow 12:00"
+  "time": "Tomorrow 12:00",
+  "projectsTitleText": "Projects",
+  "addProjectButton": "Add project",
+  "lastProject": "Last Project",
+  "addButton": "Add"
 }
