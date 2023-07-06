@@ -12,7 +12,8 @@ class ProjectAPI {
       },
       body: {
         name: name
-      }
+      },
+      failOnStatusCode: false
     });
   }
 

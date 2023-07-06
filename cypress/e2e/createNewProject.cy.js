@@ -44,4 +44,10 @@ describe('Should be able to create new project and task', () => {
         projectPage.verifyUserCannotAddNewProject();
     })
 
+    //ACTUALLY HERE IS A BUG, CAUSE USER CAN CREATE 7 PROJECTS VIA API
+    //Instead of 6 I will do for 8, because of the bug
+    it('should not be able to create more then 5 projects via API without Pro plan', () => {
+        projectActions.createManyProjectsViaAPI(7);
+        projectActions.verifyUserCannotCreateMoreProjects();
+    })
 })

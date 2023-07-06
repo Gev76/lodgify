@@ -27,6 +27,12 @@ class ProjectActions {
         });
     }
 
+    verifyUserCannotCreateMoreProjects = () => {
+        projectAPI.createProject('boundary project').then((response) => {
+            expect(response.status).to.equal(403);
+          });
+    }
+
     verifyTaskIsSavedViaAPI = (taskName, taskDescription) => {
         projectAPI.getAllProjects()
             .then(allProjects => {
