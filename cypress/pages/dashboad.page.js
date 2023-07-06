@@ -5,9 +5,11 @@ class DashboardPage {
         this.header = '[id="top_bar_inner"]';
         this.topSidebar = '[data-testid="top-sidebar-nav-items"]';
         this.date = '[data-testid="view_header"]';
-        this.projectsList = '[id="left-menu-projects-panel"]';
+        this.projectsList = '[id="projects_list"]';
         this.createdProject = '[data-type="project_list_item"]';
         this.projectHeader = '[data-testid="view_header__h1"]';
+        this.addProjectButton = '[aria-label="Add project"]';
+        this.projectsHeader = 'a[href="/app/projects"]';
     }
 
     verifyUserIsLoggedIn = () => {
@@ -25,6 +27,14 @@ class DashboardPage {
         cy.get(this.projectHeader).should('contain', name);
     }
 
+    verifyProjectsCount = (num) => {
+        cy.get(this.createdProject).should('have.length', num);
+    }
+
+    navigateToProjectsSection = () => {
+        cy.get(this.projectsHeader).should('be.visible');
+        cy.get(this.projectsHeader).click();
+    }
   }
   
   export default DashboardPage;

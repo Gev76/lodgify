@@ -4,6 +4,12 @@ const projectAPI = new ProjectAPI();
 
 class ProjectActions {
 
+    createManyProjectsViaAPI = (count) => {
+        for(let i = 1; i <= count; i++){
+            this.createNewProjectViaAPI('project N' + i)
+        }
+    }
+
     createNewProjectViaAPI = (name) => {
         projectAPI.getAllProjects()
         .then(allProjects => {
